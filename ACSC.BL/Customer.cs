@@ -41,6 +41,7 @@ namespace ACSC.BL
             get
             {
                 var list = new List<string>();
+
                 if (Id > 0) list.Add("Id");
                 if (string.IsNullOrWhiteSpace(FirstName) == false) list.Add("FirstName");
                 if (string.IsNullOrWhiteSpace(LastName) == false) list.Add("LastName");

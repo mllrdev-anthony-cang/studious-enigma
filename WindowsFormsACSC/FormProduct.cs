@@ -164,6 +164,10 @@ namespace WindowsFormsACSC
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete?", "Message Box", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+
+            if (dialogResult == DialogResult.No) return;
+
             var product = new Product
             {
                 Id = SelectedId

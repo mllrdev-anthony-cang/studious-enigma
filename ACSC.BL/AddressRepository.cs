@@ -21,7 +21,6 @@ namespace ACSC.BL
                 return result;
             }
         }
-
         public string SqlView(Address address)
         {
             string sql = $"SELECT TOP 1000 * FROM Address WHERE MarkAs = 'Active' AND CustomerId = {address.CustomerId}";
@@ -39,11 +38,13 @@ namespace ACSC.BL
             foreach (var validitem in validlist)
             {
                 if (validlist.IndexOf(validitem) > 0) sql += " AND";
+
                 if (string.Equals(validitem, "Id"))
                 {
                     sql += $" Id = {address.Id}";
                     break;
                 }
+
                 if (string.Equals(validitem, "HouseBuildingStreet")) sql += $" HouseBuildingStreet LIKE '%{address.HouseBuildingStreet}%'";
                 if (string.Equals(validitem, "Province")) sql += $" Province LIKE '%{address.Province}%'";
                 if (string.Equals(validitem, "CityMunicipality")) sql += $" CityMunicipality LIKE '%{address.CityMunicipality}%'";

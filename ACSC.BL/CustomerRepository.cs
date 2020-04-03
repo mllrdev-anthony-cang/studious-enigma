@@ -39,6 +39,7 @@ namespace ACSC.BL
             foreach (var validitem in validlist)
             {
                 if (validlist.IndexOf(validitem) > 0) sql += " AND";
+
                 if (string.Equals(validitem, "Id"))
                 {
                     sql += $" Id = {customer.Id}";
